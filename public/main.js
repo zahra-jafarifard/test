@@ -63,7 +63,7 @@ autoUpdater.on("update-downloaded", () => {
 
 
 const uu = "vercel.com/zahra-jafarifard/test";
-const server = `https://${uu}/download/${platformName}?update=true`;
+const server = `https://${uu}/download/${process.platform}?update=true`;
 // const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 autoUpdater.setFeedURL({ server });
 
