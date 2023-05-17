@@ -51,10 +51,10 @@ app.on("ready", function () {
   console.log('application emitted "ready"');
 
   const server = "https://vercel.com/zahra-jafarifard/test";
-  const releaseUrl = `${server}/update/${process.platform}/${app.getVersion()}`;
-  autoUpdater.setFeedURL({ releaseUrl });
+  const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+  autoUpdater.setFeedURL({ url });
 
-  console.log("releaseUrl: " + releaseUrl);
+  console.log("url: " + url);
 
   autoUpdater
     .on("error", function () {
