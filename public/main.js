@@ -1,16 +1,7 @@
-const {
-  app,
-  BrowserWindow,
-  Notification,
-  ipcMain,
-  autoUpdater,
-} = require("electron");
+const { app, BrowserWindow, Notification, ipcMain } = require("electron");
 const isDev = require("electron-is-dev");
 
 const path = require("path");
-const server = "https://vercel.com/zahra-jafarifard/test";
-const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-autoUpdater.setFeedURL({ url });
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -36,10 +27,6 @@ app.whenReady().then(createWindow);
 
 const UPDATE_CHECK_INTERVAL = 10000;
 
-setInterval(() => {
-  autoUpdater.checkForUpdates();
-}, UPDATE_CHECK_INTERVAL);
-
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
@@ -55,6 +42,39 @@ app.on("window-all-closed", () => {
 ipcMain.handle("closeApp", () => {
   app.quit();
 });
+
+app.on("ready", function () {
+  console.log('application emitted "ready"');
+
+  var autoUpdater = require("auto-updater");
+
+  const server = "https://vercel.com/zahra-jafarifard/test";
+  const releaseUrl = `${server}/update/${process.platform}/${app.getVersion()}`;
+  !isDev && autoUpdater.setFeedURL({ releaseUrl });
+
+  autoUpdater.setFeedURL(releaseUrl);
+  console.log("releaseUrl: " + releaseUrl);
+
+  autoUpdater
+    .on("error", function () {
+      console.log(arguments);
+    })
+    .on("checking-for-update", function () {
+      console.log("Checking for update");
+    })
+    .on("update-available", function () {
+      console.log("Update available");
+    })
+    .on("update-not-available", function () {
+      console.log("Update not available");
+    })
+    .on("update-downloaded", function () {
+      console.log("Update downloaded");
+    });
+
+  autoUpdater.checkForUpdates();
+});
+
 // ipcMain.handle("openTelmisSite", () => {
 //   // shell.openExternal("https://telmis.ir");
 //   require("shell").openExternal("http://www.google.com");
