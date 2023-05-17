@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Notification, ipcMain } = require("electron");
+const { app, BrowserWindow, Notification, ipcMain , autoUpdater } = require("electron");
 const isDev = require("electron-is-dev");
 
 const path = require("path");
@@ -41,13 +41,13 @@ ipcMain.handle("closeApp", () => {
   app.quit();
 });
 
-var autoUpdater = require("auto-updater");
+// var autoUpdater = require("auto-updater");
 
 const server = "https://vercel.com/zahra-jafarifard/test";
 const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-// autoUpdater.setFeedURL({ url });
+autoUpdater.setFeedURL({ url });
 
-autoUpdater.setFeedURL(url);
+// autoUpdater.setFeedURL(url);
 
 console.log("url: " + url);
 
