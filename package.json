@@ -1,6 +1,6 @@
 {
   "name": "exhub",
-  "version": "02.02.27.3.2",
+  "version": "2.2.2023",
   "homepage": "./",
   "private": true,
   "author": "Zahra Jafarifad(TELMIS)",
@@ -38,9 +38,6 @@
     "nsis": {
       "createDesktopShortcut": "always"
     }
-  },
-  "update-config": {
-    "electronVersion": "02.02.27.3.2"
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
