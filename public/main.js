@@ -1,7 +1,12 @@
 const { app, BrowserWindow, Notification, ipcMain } = require("electron");
 const isDev = require("electron-is-dev");
-const { autoUpdater } = require("electron-updater");
-require("update-electron-app")();
+// const { autoUpdater } = require("electron-updater");
+
+require("update-electron-app")({
+  repo: "zahra-jafarifard/test",
+  updateInterval: "1 minute",
+  logger: require("electron-log"),
+});
 const path = require("path");
 
 function createWindow() {
@@ -42,20 +47,19 @@ ipcMain.handle("closeApp", () => {
   app.quit();
 });
 
-app.on("ready", () => {
-  autoUpdater.checkForUpdatesAndNotify();
-});
+// app.on("ready", () => {
+//   autoUpdater.checkForUpdatesAndNotify();
+// });
 
-const server = "https://test-git-main-zahra-jafarifard.vercel.app";
-const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-let aa = autoUpdater.setFeedURL({ url });
-console.log("ddddddaa", aa);
+// const server = "https://test-git-main-zahra-jafarifard.vercel.app";
+// const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+//  autoUpdater.setFeedURL({ url });
 
-console.log("url: " + url);
+// console.log("url: " + url);
 
-setInterval(() => {
-  autoUpdater.checkForUpdates();
-}, 10000);
+// setInterval(() => {
+//   autoUpdater.checkForUpdates();
+// }, 10000);
 
 ipcMain.handle("showSuccessNotification", (e, body, icon) => {
   app.setAppUserModelId(" Exhub ");
@@ -75,7 +79,6 @@ ipcMain.handle("showErrorNotification", (e, body, icon) => {
 });
 
 app.on("activate", () => {
-  autoUpdater.checkForUpdatesAndNotify();
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }

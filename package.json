@@ -25,7 +25,6 @@
     },
     "win": {
       "target": "nsis"
-      
     },
     "linux": {
       "target": "deb"
@@ -47,6 +46,7 @@
     "body-parser": "^1.20.1",
     "css-loader": "^6.7.3",
     "electron-is-dev": "^2.0.0",
+    "electron-log": "^4.4.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
