@@ -8,7 +8,7 @@
   "main": "public/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zahra-jafarifard/test.git"
+    "url": "https://github.com/zahra-jafarifard/test"
     
   },
   "build": {
