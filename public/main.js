@@ -59,10 +59,8 @@ autoUpdater.on("update-downloaded", () => {
   }).show();
 });
 
-const server = "https://test-tau-nine-79.vercel.app";
-const url = `${server}/update/${
-  process.platform
-}/${app.getVersion()}?update=true`;
+const server = "https://test-git-main-zahra-jafarifard.vercel.app";
+const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 autoUpdater.setFeedURL({ url });
 
 // autoUpdater.setFeedURL(url);
