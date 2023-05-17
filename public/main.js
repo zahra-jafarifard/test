@@ -61,7 +61,7 @@ autoUpdater.on("update-downloaded", () => {
 
 const server = "https://test-8ekqkzaxn-zahra-jafarifard.vercel.app";
 const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-let aa = autoUpdater.setFeedURL({ url });
+let aa = autoUpdater.setFeedURL({ server });
 console.log("ddddddaa", aa);
 // autoUpdater.setFeedURL(url);
 
