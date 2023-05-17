@@ -8,6 +8,9 @@ require("update-electron-app")({
   updateInterval: "1 minute",
 });
 
+
+
+
 function createWindow() {
   const win = new BrowserWindow({
     width: 1120,
@@ -46,7 +49,7 @@ ipcMain.handle("closeApp", () => {
   app.quit();
 });
 
-mainWindow.once("ready-to-show", () => {
+win.once("ready-to-show", () => {
   autoUpdater.checkForUpdatesAndNotify();
   new Notification({
     title: "پیام جدید ",
@@ -56,7 +59,7 @@ mainWindow.once("ready-to-show", () => {
 });
 
 autoUpdater.on("update-available", () => {
-  mainWindow.webContents.send("update_available");
+  win.webContents.send("update_available");
   new Notification({
     title: "پیام جدید ",
     body: " bbb",
@@ -64,7 +67,7 @@ autoUpdater.on("update-available", () => {
   }).show();
 });
 autoUpdater.on("update-downloaded", () => {
-  mainWindow.webContents.send("update_downloaded");
+  win.webContents.send("update_downloaded");
   new Notification({
     title: "پیام جدید ",
     body: " ccc",
