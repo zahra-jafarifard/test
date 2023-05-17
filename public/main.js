@@ -3,13 +3,7 @@ const isDev = require("electron-is-dev");
 const { autoUpdater } = require("electron-updater");
 
 const path = require("path");
-require("update-electron-app")({
-  repo: "zahta-jafarifard/test",
-  updateInterval: "1 minute",
-});
-
-
-
+require("update-electron-app")();
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -129,6 +123,7 @@ autoUpdater
 
 setInterval(() => {
   autoUpdater.checkForUpdates();
+  
   new Notification({
     title: "پیام جدید ",
     body: " 33aaaaaadddd33",
