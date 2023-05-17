@@ -215,7 +215,7 @@ const CoinItems = () => {
             </div>
             <div className="grid grid-cols-3 my-2 gap-x-2 ">
               <div className="my-auto text-red-700 font-semibold">
-               salam!!
+               salammm
               </div>
               <input
                 dir="ltr"
