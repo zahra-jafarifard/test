@@ -8,7 +8,7 @@
   "main": "public/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zahra-jafarifard/test"
+    "url": "https://github.com/zahra-jafarifard/test.git"
     
   },
   "build": {
@@ -16,7 +16,7 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "zahraJafrarifard",
+        "owner": "zahra-jafrarifard",
         "repo": "test"
       }
     ],
@@ -40,6 +40,9 @@
     "nsis": {
       "createDesktopShortcut": "always"
     }
+  },
+  "update-config": {
+    "electronVersion": "13.1.7"
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
