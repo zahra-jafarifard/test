@@ -214,7 +214,7 @@ const CoinItems = () => {
               <div className="text-red-700 font-semibold">فروش</div>
             </div>
             <div className="grid grid-cols-3 my-2 gap-x-2 ">
-              <div className="my-auto text-red-700 font-semibold">sdsdsd</div>
+              <div className="my-auto text-red-700 font-semibold">zzzzzzzz</div>
               <input
                 dir="ltr"
                 name="ghadimBuy"
