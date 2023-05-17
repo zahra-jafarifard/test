@@ -1,7 +1,16 @@
-const { app, BrowserWindow, Notification, ipcMain } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  Notification,
+  ipcMain,
+  autoUpdater,
+} = require("electron");
 const isDev = require("electron-is-dev");
 
 const path = require("path");
+const server = "https://vercel.com/zahra-jafarifard/test";
+const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+autoUpdater.setFeedURL({ url });
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -24,6 +33,12 @@ function createWindow() {
 }
 
 app.whenReady().then(createWindow);
+
+const UPDATE_CHECK_INTERVAL = 10000;
+
+setInterval(() => {
+  autoUpdater.checkForUpdates();
+}, UPDATE_CHECK_INTERVAL);
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
