@@ -59,7 +59,7 @@ autoUpdater.on("update-downloaded", () => {
   }).show();
 });
 
-const server = "https://test-git-main-zahra-jafarifard.vercel.app";
+const server = "https://test-8ekqkzaxn-zahra-jafarifard.vercel.app";
 const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 autoUpdater.setFeedURL({ url });
 
