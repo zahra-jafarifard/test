@@ -14,8 +14,9 @@
     "appId": "com.electron.myapp",
     "publish": [
       {
-        "provider": "generic",
-        "url": "https://gitlab.com"
+        "provider": "github",
+        "owner": "zahra-jafrarifard",
+        "repo": "test"
       }
     ],
     "productName": "Exhub",
