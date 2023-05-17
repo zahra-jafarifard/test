@@ -1,6 +1,6 @@
-const { app, BrowserWindow, Notification, ipcMain , autoUpdater } = require("electron");
+const { app, BrowserWindow, Notification, ipcMain  } = require("electron");
 const isDev = require("electron-is-dev");
-
+const { autoUpdater } = require('electron-updater');
 const path = require("path");
 
 function createWindow() {
@@ -72,6 +72,10 @@ setInterval(() => {
   autoUpdater.checkForUpdates();
 }, 10000);
 
+
+app.on('ready', function()  {
+  autoUpdater.checkForUpdatesAndNotify();
+});
 // ipcMain.handle("openTelmisSite", () => {
 //   // shell.openExternal("https://telmis.ir");
 //   require("shell").openExternal("http://www.google.com");

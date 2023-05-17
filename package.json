@@ -6,8 +6,20 @@
   "author": "Zahra Jafarifad(TELMIS)",
   "description": "Exhub using Javascript :)",
   "main": "public/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zahra-jafarifard/test"
+    
+  },
   "build": {
     "appId": "com.electron.myapp",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "zahraJafrarifard",
+        "repo": "test"
+      }
+    ],
     "productName": "Exhub",
     "files": [
       "build/**/*",
