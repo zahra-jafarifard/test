@@ -42,8 +42,6 @@ ipcMain.handle("closeApp", () => {
   app.quit();
 });
 
-
-
 autoUpdater.on("update-available", () => {
   win.webContents.send("update_available");
   new Notification({
@@ -61,11 +59,11 @@ autoUpdater.on("update-downloaded", () => {
   }).show();
 });
 
-
-const uu = "vercel.com/zahra-jafarifard/test";
-const server = `https://${uu}/download/${process.platform}?update=true`;
-// const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-autoUpdater.setFeedURL({ server });
+const server = "https://test-tau-nine-79.vercel.app";
+const url = `${server}/update/${
+  process.platform
+}/${app.getVersion()}?update=true`;
+autoUpdater.setFeedURL({ url });
 
 // autoUpdater.setFeedURL(url);
 
@@ -115,7 +113,7 @@ autoUpdater
 
 setInterval(() => {
   autoUpdater.checkForUpdates();
-  
+
   new Notification({
     title: "پیام جدید ",
     body: " 33aaaaaadddd33",
