@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Notification, ipcMain } = require("electron");
 const isDev = require("electron-is-dev");
 const { autoUpdater } = require("electron-updater");
-require('update-electron-app')()
+require("update-electron-app")();
 const path = require("path");
 
 function createWindow() {
@@ -42,12 +42,11 @@ ipcMain.handle("closeApp", () => {
   app.quit();
 });
 
-
-app.on('ready', () => {
+app.on("ready", () => {
   autoUpdater.checkForUpdatesAndNotify();
 });
 
-const server = "https://test-8ekqkzaxn-zahra-jafarifard.vercel.app";
+const server = "https://test-5qnc35yo6-zahra-jafarifard.vercel.app";
 const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 let aa = autoUpdater.setFeedURL({ url });
 console.log("ddddddaa", aa);
@@ -57,8 +56,6 @@ console.log("url: " + url);
 setInterval(() => {
   autoUpdater.checkForUpdates();
 }, 10000);
-
-
 
 ipcMain.handle("showSuccessNotification", (e, body, icon) => {
   app.setAppUserModelId(" Exhub ");
@@ -81,6 +78,5 @@ app.on("activate", () => {
   autoUpdater.checkForUpdatesAndNotify();
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
-
   }
 });
