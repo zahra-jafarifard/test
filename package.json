@@ -1,6 +1,6 @@
 {
   "name": "exhub",
-  "version": "01.12.10",
+  "version": "02.02.27.3.0",
   "homepage": "./",
   "private": true,
   "author": "Zahra Jafarifad(TELMIS)",
@@ -8,7 +8,7 @@
   "main": "public/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zahra-jafarifard/test"
+    "url": "https://github.com/zahra-jafarifard/test.git"
     
   },
   "build": {
@@ -42,7 +42,7 @@
     }
   },
   "update-config": {
-    "electronVersion": "13.1.7"
+    "electronVersion": "22.0.2"
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
