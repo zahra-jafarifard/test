@@ -1,10 +1,4 @@
-const {
-  app,
-  BrowserWindow,
-  Notification,
-  ipcMain,
-  autoUpdater,
-} = require("electron");
+const { app, BrowserWindow, Notification, ipcMain } = require("electron");
 const isDev = require("electron-is-dev");
 
 const path = require("path");
@@ -47,34 +41,36 @@ ipcMain.handle("closeApp", () => {
   app.quit();
 });
 
-app.on("ready", function () {
-  console.log('application emitted "ready"');
+var autoUpdater = require("auto-updater");
 
-  const server = "https://vercel.com/zahra-jafarifard/test";
-  const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-  autoUpdater.setFeedURL({ url });
+const server = "https://vercel.com/zahra-jafarifard/test";
+const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+// autoUpdater.setFeedURL({ url });
 
-  console.log("url: " + url);
+autoUpdater.setFeedURL(url);
 
-  autoUpdater
-    .on("error", function () {
-      console.log(arguments);
-    })
-    .on("checking-for-update", function () {
-      console.log("Checking for update");
-    })
-    .on("update-available", function () {
-      console.log("Update available");
-    })
-    .on("update-not-available", function () {
-      console.log("Update not available");
-    })
-    .on("update-downloaded", function () {
-      console.log("Update downloaded");
-    });
+console.log("url: " + url);
 
+autoUpdater
+  .on("error", function (err) {
+    console.log(err);
+  })
+  .on("checking-for-update", function () {
+    console.log("Checking for update");
+  })
+  .on("update-available", function () {
+    console.log("Update available");
+  })
+  .on("update-not-available", function () {
+    console.log("Update not available");
+  })
+  .on("update-downloaded", function () {
+    console.log("Update downloaded");
+  });
+
+setInterval(() => {
   autoUpdater.checkForUpdates();
-});
+}, 10000);
 
 // ipcMain.handle("openTelmisSite", () => {
 //   // shell.openExternal("https://telmis.ir");
