@@ -1,6 +1,6 @@
 {
   "name": "exhub",
-  "version": "02.02.27.3.0",
+  "version": "02.02.27.3.2",
   "homepage": "./",
   "private": true,
   "author": "Zahra Jafarifad(TELMIS)",
@@ -42,7 +42,7 @@
     }
   },
   "update-config": {
-    "electronVersion": "22.0.2"
+    "electronVersion": "02.02.27.3.2"
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
