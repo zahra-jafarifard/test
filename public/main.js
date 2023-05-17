@@ -3,7 +3,6 @@ const isDev = require("electron-is-dev");
 const { autoUpdater } = require("electron-updater");
 
 const path = require("path");
-require("update-electron-app")();
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -43,14 +42,7 @@ ipcMain.handle("closeApp", () => {
   app.quit();
 });
 
-win.once("ready-to-show", () => {
-  autoUpdater.checkForUpdatesAndNotify();
-  new Notification({
-    title: "پیام جدید ",
-    body: " aaa",
-    icon: path.join(__dirname, "success-icon.png"),
-  }).show();
-});
+
 
 autoUpdater.on("update-available", () => {
   win.webContents.send("update_available");
@@ -69,11 +61,11 @@ autoUpdater.on("update-downloaded", () => {
   }).show();
 });
 
-// var autoUpdater = require("auto-updater");
 
-const server = "https://vercel.com/zahra-jafarifard/test";
-const url = `${server}/update/${process.platform}/${app.getVersion()}`;
-autoUpdater.setFeedURL({ url });
+const uu = "vercel.com/zahra-jafarifard/test";
+const server = `https://${uu}/download/${platformName}?update=true`;
+// const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+autoUpdater.setFeedURL({ server });
 
 // autoUpdater.setFeedURL(url);
 

@@ -24,10 +24,8 @@
       "target": "dmg"
     },
     "win": {
-      "target": "nsis",
-      "win": {
-        "publish": ["github", "bitbucket"]
-      }
+      "target": "nsis"
+      
     },
     "linux": {
       "target": "deb"
