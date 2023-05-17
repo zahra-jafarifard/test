@@ -12,6 +12,12 @@
   },
   "build": {
     "appId": "com.electron.myapp",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://gitlab.com"
+      }
+    ],
     "productName": "Exhub",
     "files": [
       "build/**/*",
@@ -63,12 +69,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "release": "electron-builder",
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js",
     "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/main.js",
-    "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/main.js"
+    "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/main.js",
+    "postinstall": "",
+    "install": "node-gyp install"
   },
   "eslintConfig": {
     "extends": [
