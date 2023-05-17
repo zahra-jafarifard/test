@@ -1,4 +1,10 @@
-const { app, BrowserWindow, Notification, ipcMain } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  Notification,
+  ipcMain,
+  autoUpdater,
+} = require("electron");
 const isDev = require("electron-is-dev");
 
 const path = require("path");
@@ -25,8 +31,6 @@ function createWindow() {
 
 app.whenReady().then(createWindow);
 
-const UPDATE_CHECK_INTERVAL = 10000;
-
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
@@ -46,13 +50,10 @@ ipcMain.handle("closeApp", () => {
 app.on("ready", function () {
   console.log('application emitted "ready"');
 
-  var autoUpdater = require("auto-updater");
-
   const server = "https://vercel.com/zahra-jafarifard/test";
   const releaseUrl = `${server}/update/${process.platform}/${app.getVersion()}`;
-  !isDev && autoUpdater.setFeedURL({ releaseUrl });
+  autoUpdater.setFeedURL({ releaseUrl });
 
-  autoUpdater.setFeedURL(releaseUrl);
   console.log("releaseUrl: " + releaseUrl);
 
   autoUpdater
