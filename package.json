@@ -6,16 +6,13 @@
   "author": "Zahra Jafarifad(TELMIS)",
   "description": "Exhub using Javascript :)",
   "main": "public/main.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zahra-jafarifard/test.git"
-  },
+
   "build": {
     "appId": "com.electron.myapp",
     "publish": 
       {
         "provider": "github",
-        "repo": "https://github.com/zahra-jafarifard/test.git",
+        "repo": "test",
         "token" : "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",
         "releaseType" :"draft",
         "publishAutoUpdate" : "true"
