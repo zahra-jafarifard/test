@@ -2,12 +2,10 @@
 
 # dependencies
 /node_modules
-<<<<<<< HEAD
 /.vscode
 =======
 /build
 /dist
->>>>>>> 34ef77f2021b3843e85f762442be988eccd5ff38
 /.pnp
 .pnp.js
 
