@@ -1,11 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-<<<<<<< HEAD
 import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-=======
->>>>>>> 34ef77f2021b3843e85f762442be988eccd5ff38
 import { HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
