@@ -14,7 +14,7 @@
     "appId": "com.electron.myapp",
     "publish": [
       {
-        "provider": "git",
+        "provider": "generic",
         "url": "https://github.com/zahra-jafarifard/test.git"
       }
     ],
@@ -50,6 +50,7 @@
     "css-loader": "^6.7.3",
     "electron-is-dev": "^2.0.0",
     "electron-log": "^4.4.8",
+    "electron-updater": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
@@ -71,6 +72,10 @@
     "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js",
     "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/main.js",
     "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/main.js",
+
+    "builds": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always",
+
     "postinstall": "",
     "install": "node-gyp install"
   },
@@ -95,7 +100,6 @@
   "devDependencies": {
     "electron": "^22.0.2",
     "electron-builder": "^23.6.0",
-    "electron-updater": "^5.3.0",
     "tailwindcss": "^3.2.4"
   }
 }

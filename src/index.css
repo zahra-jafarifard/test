@@ -11,11 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "IRANSansWeb";
-  src: local("IRANSansWeb"),
-   url("./assets/font/IRANSansWeb.ttf") format("truetype");
-  }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
