@@ -17,7 +17,7 @@
         "provider": "github",
         "repo": "https://github.com/zahra-jafarifard/test.git",
         "token" : "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",
-        "releaseType" :" draft",
+        "releaseType" :"draft",
         "publishAutoUpdate" : "true"
       }
     ,
