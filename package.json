@@ -5,7 +5,7 @@
   "private": true,
   "author": "Zahra Jafarifad(TELMIS)",
   "description": "Exhub using Javascript :)",
-  "main": "main.js",
+  "main": "public/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/zahra-jafarifard/test.git"
