@@ -74,20 +74,8 @@
     "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js",
     "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/main.js",
     "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/main.js",
-<<<<<<< HEAD
-
-    "builds": "electron-builder build --win --publish never",
-    "deploy": "electron-builder build --win --publish always",
-
-    "postinstall": "",
-    "install": "node-gyp install"
-=======
-    "release": "electron-builder -w -c.extraMetadata.main=build/main.js",
-
-    "builder": "electron-builder build --win --publish never",
     "deploy": "npm run build && electron-builder build  --win -c.extraMetadata.main=build/main.js --publish always"
 
->>>>>>> 34ef77f2021b3843e85f762442be988eccd5ff38
   },
   "eslintConfig": {
     "extends": [
