@@ -12,12 +12,12 @@
   },
   "build": {
     "appId": "com.electron.myapp",
-    "publish": [
+    "publish": 
       {
         "provider": "generic",
         "url": "https://github.com/zahra-jafarifard/test.git"
       }
-    ],
+    ,
     "productName": "Exhub",
     "files": [
       "build/**/*",
@@ -75,7 +75,7 @@
     "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/main.js",
     "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/main.js",
     "builder": "electron-builder build --win --publish never",
-    "deploy": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js --publish always"
+    "deploy": "npm run build && electron-builder build  --win -c.extraMetadata.main=build/main.js --publish always"
 
   },
   "eslintConfig": {
