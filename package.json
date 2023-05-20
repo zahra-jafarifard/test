@@ -1,6 +1,6 @@
 {
   "name": "exhub",
-  "version": "2.2.2023",
+  "version": "2.2.2024",
   "homepage": "./",
   "private": true,
   "author": "Zahra Jafarifad(TELMIS)",
@@ -72,7 +72,7 @@
 
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js --publish never",
+    "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js",
     "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/main.js",
     "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/main.js",
     "postinstall": "",
