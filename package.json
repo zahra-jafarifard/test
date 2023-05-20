@@ -65,18 +65,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
 
-    "deploy": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js --publish always",
 
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/main.js",
     "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/main.js",
     "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/main.js",
-    "postinstall": "",
-    "install": "node-gyp install"
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+
   },
   "eslintConfig": {
     "extends": [
